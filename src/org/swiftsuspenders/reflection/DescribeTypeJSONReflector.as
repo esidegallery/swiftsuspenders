@@ -248,7 +248,7 @@ package org.swiftsuspenders.reflection
 					for (var j : int = 0; j < parametersCount; j++)
 					{
 						const parameter : Object = parametersList[j];
-						parametersMap[parameter.key] = parametersMap[parameter.key]
+						parametersMap[parameter.key] = parametersMap[parameter.key] != undefined
 							? parametersMap[parameter.key] + ',' + parameter.value
 							: parameter.value;
 					}
