@@ -14,6 +14,7 @@ package org.swiftsuspenders
 	import org.hamcrest.object.notNullValue;
 	import org.swiftsuspenders.reflection.Reflector;
 	import org.swiftsuspenders.support.injectees.InterfaceInjectee;
+	import org.swiftsuspenders.support.injectees.MixedFirstUnnamedParametersConstructorInjectee;
 	import org.swiftsuspenders.support.injectees.NamedInterfaceInjectee;
 	import org.swiftsuspenders.support.injectees.OneNamedParameterConstructorInjectee;
 	import org.swiftsuspenders.support.injectees.OneNamedParameterMethodInjectee;
@@ -239,6 +240,22 @@ package org.swiftsuspenders
 			Assert.assertNotNull("Instance of Clazz should have been injected for Clazz dependency",
 					injectee.getDependency());
 			Assert.assertNotNull("Instance of Clazz should have been injected for Interface dependency",
+					injectee.getDependency2());
+		}
+
+		[Test]
+		public function reflectorCorrectlyCreatesInjectionPointForMixedFirstUnnamedParamsConstructorInjection() : void
+		{
+			const injectionPoint : ConstructorInjectionPoint =
+				reflector.describeInjections(MixedFirstUnnamedParametersConstructorInjectee).ctor;
+			injector.map(Clazz);
+			injector.map(Interface, 'namedDep').toType(Clazz);
+			var injectee:MixedFirstUnnamedParametersConstructorInjectee =
+					MixedFirstUnnamedParametersConstructorInjectee(injectionPoint
+							.createInstance(MixedFirstUnnamedParametersConstructorInjectee, injector));
+			Assert.assertNotNull("Instance of Clazz should have been injected for Clazz dependency",
+					injectee.getDependency());
+			Assert.assertNotNull("Instance of Clazz should have been injected for named Interface parameter",
 					injectee.getDependency2());
 		}
 
