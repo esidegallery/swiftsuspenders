@@ -93,9 +93,9 @@ package org.swiftsuspenders.reflection
 			{
 				var parameter : XML = args[i];
 				var key : String = parameter.@key;
-				parametersMap[key] = parametersMap[key]
+				parametersMap[key] = parametersMap[key] != undefined
 					? parametersMap[key] + ',' + parameter.attribute('value')
-					: parameter.attribute('value');
+					: parameter.attribute('value').toString();
 			}
 			return parametersMap;
 		}
