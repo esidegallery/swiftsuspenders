@@ -7,7 +7,7 @@
 
 package org.swiftsuspenders.reflection
 {
-	import avmplus.DescribeTypeJSON;
+	import avmplus.DescribeTypeJSON2;
 
 	import flash.utils.Dictionary;
 	import flash.utils.getQualifiedClassName;
@@ -24,7 +24,7 @@ package org.swiftsuspenders.reflection
 	public class DescribeTypeJSONReflector extends ReflectorBase implements Reflector
 	{
 		//----------------------       Private / Protected Properties       ----------------------//
-		private const _descriptor : DescribeTypeJSON = new DescribeTypeJSON();
+		private const _descriptor : DescribeTypeJSON2 = new DescribeTypeJSON2();
 
 		//----------------------               Public Methods               ----------------------//
 		public function typeImplements(type : Class, superType : Class) : Boolean

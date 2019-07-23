@@ -7,7 +7,7 @@
 
 package org.swiftsuspenders
 {
-	import avmplus.DescribeTypeJSON;
+	import avmplus.DescribeTypeJSON2;
 
 	import flash.events.EventDispatcher;
 	import flash.system.ApplicationDomain;
@@ -207,7 +207,7 @@ package org.swiftsuspenders
 			_managedObjects = new Dictionary();
 			try
 			{
-				_reflector = DescribeTypeJSON.available
+				_reflector = DescribeTypeJSON2.available
 					? new DescribeTypeJSONReflector()
 					: new DescribeTypeReflector();
 			}

@@ -17,7 +17,7 @@ package avmplus
 	 *
 	 * @see http://www.tillschneidereit.de/2009/11/22/improved-reflection-support-in-flash-player-10-1/
 	 */
-	public class DescribeTypeJSON
+	public class DescribeTypeJSON2
 	{
 		//----------------------              Public Properties             ----------------------//
 		public static var available : Boolean = describeTypeJSON != null;
@@ -30,7 +30,7 @@ package avmplus
 
 
 		//----------------------               Public Methods               ----------------------//
-		public function DescribeTypeJSON()
+		public function DescribeTypeJSON2()
 		{
 		}
 		public function describeType(target : Object, flags : uint) : Object
